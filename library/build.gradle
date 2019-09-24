@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+apply plugin: 'bintray-release'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 100
+        versionName '1.0.0'
+    }
+}
+
+dependencies {
+    implementation 'org.slf4j:slf4j-android:1.7.21'
+}
+
+publish {
+    repoName = 'maven'
+    userOrg = 'chenyan521'
+    groupId = 'com.huochat'
+    artifactId = 'mediacache'
+    publishVersion = android.defaultConfig.versionName
+    desc = 'Cache support for android VideoView'
+    website = 'https://github.com/chenyan-github/AndroidMediaCache'
+}
